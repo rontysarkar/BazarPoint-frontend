@@ -1,0 +1,27 @@
+[00:00:16.456] Server  LOG     ✓ Ready in 10.9s
+[00:00:19.471] Server  LOG     ○ Compiling / ...
+[00:00:20.593] Server  ERROR   redux-persist failed to create sync storage. falling back to noop storage.
+[00:00:20.854] Server  ERROR   ⨯ TypeError: Super expression must either be null or a function
+[00:00:21.002] Server  ERROR   ⨯ TypeError: Super expression must either be null or a function
+[00:00:22.414] Server  ERROR   ⨯ TypeError: Super expression must either be null or a function
+[00:00:22.572] Server  ERROR   ⨯ TypeError: Super expression must either be null or a function
+[00:00:22.719] Browser ERROR   uncaughtError: TypeError: Super expression must either be null or a function
+[00:00:40.972] Server  ERROR   redux-persist failed to create sync storage. falling back to noop storage.
+[00:00:41.200] Server  ERROR   ⨯ TypeError: Super expression must either be null or a function
+[00:00:41.352] Server  ERROR   ⨯ TypeError: Super expression must either be null or a function
+[00:00:41.447] Browser ERROR   uncaughtError: TypeError: Super expression must either be null or a function
+[00:00:45.910] Server  ERROR   redux-persist failed to create sync storage. falling back to noop storage.
+[00:00:46.055] Server  ERROR   ⨯ TypeError: Super expression must either be null or a function
+[00:00:46.236] Server  ERROR   ⨯ TypeError: Super expression must either be null or a function
+[00:00:46.313] Browser ERROR   uncaughtError: TypeError: Super expression must either be null or a function
+[00:00:57.795] Server  LOG     ✓ Compiled in 169ms
+[00:00:58.121] Server  ERROR   redux-persist failed to create sync storage. falling back to noop storage.
+[00:00:58.241] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:01.468] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:27.176] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:27.885] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:28.541] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:29.570] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:30.379] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:02.246] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:03.778] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
