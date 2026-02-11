@@ -3,9 +3,10 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Input } from '@/components/ui/input'
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { toggleLoginDialog } from '@/store/slice/userSlice'
 import { RootState } from '@/store/store'
-import { ChevronRight, Heart, Lock, LogOut, Package, PiggyBank, Search, ShoppingCart, User, User2 } from 'lucide-react'
+import { ChevronRight, Heart, Lock, LogOut, Menu, Package, PiggyBank, Search, ShoppingCart, User, User2 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -120,7 +121,6 @@ const header = () => {
 
   ]
 
-  console.log(menuItems)
 
   const MenuItems = ({ className = '' }) => (
     <div className={className}>
@@ -145,7 +145,7 @@ const header = () => {
   )
 
   return (
-    <header className='border-b bg-white sticky top-0 z-50'>
+    <header className='border-b bg-white text-black sticky top-0 z-50'>
       {/* desktop header */}
       <div className='container w-[80%] mx-auto hidden lg:flex items-center justify-around p-4'>
         <Link href='/' className='flex itmes-center'>
@@ -211,6 +211,70 @@ const header = () => {
           </Link>
         </div>
       </div>
+
+      {/* Mobile header */}
+      <div className='contianer mx-aut lg:hidden flex p-5'>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant='ghost' size='icon'>
+              <Menu className='w-6 h-6' />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side='left' className='w-80 p-0'>
+            <SheetHeader className='p-0'>
+              <SheetTitle className='sr-only'></SheetTitle>
+            </SheetHeader>
+            <div className='border-b p-4'>
+              <Link href='/' className='flex itmes-center'>
+                <Image
+                  src='/images/web-logo.png'
+                  width={150}
+                  height={40}
+                  alt='Mobile-logo'
+                  className='h-10 w-auto'
+                />
+              </Link>
+            </div>
+            <MenuItems className='text-black' />
+          </SheetContent>
+        </Sheet>
+        <Link href='/' className='flex itmes-center'>
+          <Image
+            src='/images/web-logo.png'
+            width={150}
+            height={40}
+            alt='desktop-logo'
+            className='h-10 w-auto'
+          />
+        </Link>
+        <div className='flex flex-1 itmes-center justify-center max-w-xl px-4 '>
+          <div className='relative w-full '>
+            <Input
+              type='text'
+              placeholder='Search Product...'
+              className='w-full pr-10'
+            />
+            <Button
+              size='icon'
+              variant='ghost'
+              className='absolute right-0 top-1/2 -translate-y-1/2'
+            >
+              <Search />
+            </Button>
+          </div>
+        </div>
+        <Link href='/checkout/cart'>
+          <div className='relative'>
+            <Button variant='ghost' className='relative' >
+              <ShoppingCart className='w-6 h-6 mr-2' />
+            </Button>
+            {user && (
+              <h1 className='absolute text-xs left-5 top-2 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-white rounded-full px-1'>3</h1>
+            )}
+          </div>
+        </Link>
+      </div>
+
     </header>
   )
 }
