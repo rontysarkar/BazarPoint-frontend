@@ -27,6 +27,7 @@ import React, { useEffect, useState } from "react";
 const Accounts = () => {
   const [currentGame, setCurrentGame] = useState("Select a Game");
   const [value, setValue] = useState([100, 5000]);
+  const [priceRangeToggle, setPriceRangeToggle] = useState(false);
   const [priceRangeMenuOpen, setPriceRangeMenuOpen] = useState(false);
   const [allGames, setAllGames] = useState(gamesAccounts);
 
@@ -40,7 +41,7 @@ const Accounts = () => {
     );
 
     setAllGames(filtered);
-  }, [currentGame, value, gamesAccounts]);
+  }, [currentGame, priceRangeToggle, gamesAccounts]);
 
   return (
     <section className="bg-gradient-to-br from-emerald-50 to via-sky-50 to-white">
@@ -126,7 +127,15 @@ const Accounts = () => {
                       >
                         Cancel
                       </Button>
-                      <Button variant="link">Show</Button>
+                      <Button
+                        onClick={() => {
+                          setPriceRangeMenuOpen(false);
+                          setPriceRangeToggle((prev) => !prev);
+                        }}
+                        variant="link"
+                      >
+                        Show
+                      </Button>
                     </DropdownMenuGroup>
                   </DropdownMenuContent>
                 </DropdownMenu>
