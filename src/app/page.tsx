@@ -49,6 +49,7 @@ export default function Home() {
       <Banner/>
       <Categories/>
       <Featured/>
+      
     </main>
   );
 }

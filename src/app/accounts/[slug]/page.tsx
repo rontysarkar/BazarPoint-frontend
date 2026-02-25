@@ -6,22 +6,20 @@ import Image from "next/image";
 import { useState } from "react";
 import { format, formatDistanceToNow } from "date-fns";
 import { ContrastIcon } from "lucide-react";
+import Featured from "@/app/components/Featured";
 
 const page = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const { slug } = useParams();
   const post = postsData.find((p) => p.slug === slug);
-  const images = [
-    "/images/corid.png",
-    "https://res.cloudinary.com/dce35sgmb/image/upload/v1771967847/cocid_mnyrdr.png",
-  ];
+  const images = post?.images;
   const dateFormat = (dateString: string) => {
     const date = new Date(dateString);
     return format(date, "MM/dd/yyyy");
   };
   return (
     <section className="min-h-screen bg-gradient-to-br from-emerald-50 via-sky-50 to-white">
-      <div className="max-w-7xl mx-auto px-1 md:px-4 md:pt-1 ">
+      <div className="max-w-7xl mb-10 mx-auto px-1 md:px-4 md:pt-1 ">
         <nav className="mt-4 p-1 flex gap-2 items-center text-gray-500">
           <Link href="/">
             <p className="text-sm">Home</p>
@@ -39,14 +37,14 @@ const page = () => {
           <div className="space-y-4">
             <div className="relative  h-[400px]  border overflow-hidden shadow-md bg-gray-100 ">
               <Image
-                src={images[selectedImage]}
+                src={post?.images[selectedImage] || ''}
                 alt={post?.title || "image"}
                 fill
                 className="object-contain"
               />
             </div>
             <div className="flex gap-2 overflow-x-auto no-scrollbar">
-              {images.map((img, idx) => (
+              {images?.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedImage(idx)}
@@ -96,9 +94,11 @@ const page = () => {
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-gray-900 leading-tight">
-                    Infotech
+                    {post?.seller.name}
                   </h2>
-                  <p className="text-gray-500 text-sm">Member since Dec 2023</p>
+                  <p className="text-gray-500 text-sm">
+                    {post?.seller.contact}
+                  </p>
                 </div>
               </div>
 
@@ -161,9 +161,16 @@ const page = () => {
                   </span>
                 </Link>
               </div>
+              
             </div>
+            
           </div>
+          
         </div>
+        <div className=" bg-white my-4">
+          <Featured />
+      </div>
+      
       </div>
     </section>
   );

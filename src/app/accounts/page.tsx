@@ -34,6 +34,7 @@ import {
 } from "@/components/ui/select";
 import ProductLoader from "@/lib/ProductLoader";
 import { Pagination } from "../components/Pagination";
+import { useSearchParams } from "next/navigation";
 
 const Accounts = () => {
   const [priceRangeToggle, setPriceRangeToggle] = useState(false);
@@ -44,11 +45,15 @@ const Accounts = () => {
   const [sortOption, setSortOption] = useState("newest");
   const [isLoading, setIsLoading] = useState(false);
   const postPerPage = 6;
-
+  const searchParams = useSearchParams();
+  const category = searchParams.get("category");
 
   useEffect(() => {
-  setCurrentPage(1);
-}, [currentCategorie, priceRange, sortOption]);
+    setCurrentPage(1);
+    if(category){
+    setCurrentCategorie(category);
+  }
+  }, [currentCategorie, priceRange, sortOption]);
 
   const filterdPosts = postsData.filter((post) => {
     const categoryMatch =
@@ -78,7 +83,6 @@ const Accounts = () => {
     }
   });
 
-  
   const totalPage = Math.ceil(sortedPosts.length / postPerPage);
 
   const finalDisplayPosts = sortedPosts.slice(
@@ -86,26 +90,25 @@ const Accounts = () => {
     currentPage * postPerPage,
   );
 
-  const handlePageChange = (page:number)=>{
+  const handlePageChange = (page: number) => {
     setCurrentPage(page);
-  }
+  };
 
   const dateFormat = (dateString: string) => {
     const date = new Date(dateString);
     return formatDistanceToNow(date, { addSuffix: true });
   };
 
-
   return (
     <section className="bg-gradient-to-br from-emerald-50 to via-sky-50 to-white pb-5">
       <div className="max-w-7xl mx-auto px-1 md:px-4 md:pt-1">
         <nav className="mt-4 p-1 flex gap-2 items-center text-gray-500">
-          <Link href='/'>
-          <p className="text-sm ">Home</p>
+          <Link href="/">
+            <p className="text-sm ">Home</p>
           </Link>
-          <span>{'>'}</span>
-          <Link href='/accounts'>
-          <p className="text-sm">Accounts</p>
+          <span>{">"}</span>
+          <Link href="/accounts">
+            <p className="text-sm">Accounts</p>
           </Link>
         </nav>
         <div className=" p-6 bg-white rounded-md">
@@ -213,9 +216,9 @@ const Accounts = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-white pt-4">
-            { finalDisplayPosts.map((acc, idx) => (
+            {finalDisplayPosts.map((acc, idx) => (
               <Link
                 key={idx}
                 href={`/accounts/${acc.slug}`}
@@ -249,7 +252,11 @@ const Accounts = () => {
             ))}
           </div>
         </div>
-        <Pagination currentPage={currentPage} handlePageChange={handlePageChange} totalPage={totalPage}  />
+        <Pagination
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}
+          totalPage={totalPage}
+        />
       </div>
     </section>
   );
@@ -257,4 +264,4 @@ const Accounts = () => {
 
 export default Accounts;
 
-// this si a 
+// this si a

@@ -40,9 +40,9 @@ const Banner = () => {
                                 <div className="flex flex-wrap gap-2 mt-3 text-sm">
                                     <span className="text-slate-500  mt-1">Trending:</span>
                                     <Link href="/accounts"><Button variant='ghost' className="border border-slate-200 hover:border-slate-500 rounded-full ">All Games</Button></Link>
-                                    <Button variant='ghost' className="border border-slate-200 hover:border-slate-500 rounded-full ">Efootball</Button>
-                                    <Button variant='ghost' className="border border-slate-200 hover:border-slate-500 rounded-full">Pubg</Button>
-                                    <Button variant='ghost' className="border border-slate-200 hover:border-slate-500 rounded-full">Free Fire</Button>
+                                    <Link href="/accounts?category=efootball-mobile"><Button variant='ghost' className="border border-slate-200 hover:border-slate-500 rounded-full ">Efootball</Button></Link>
+                                    <Link href="/accounts?category=pubg-mobile"><Button variant='ghost' className="border border-slate-200 hover:border-slate-500 rounded-full ">Pubg</Button></Link>
+                                    <Link href="/accounts?category=free-fire"><Button variant='ghost' className="border border-slate-200 hover:border-slate-500 rounded-full ">Free Fire</Button></Link>
                                 </div>
                             </div>
                         </div>

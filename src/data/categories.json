@@ -10,42 +10,42 @@
     "id": 1,
     "name": "Free Fire",
     "slug": "free-fire",
-    "logo": "/logos/free-fire.png",
+    "logo": "https://res.cloudinary.com/dce35sgmb/image/upload/v1772056836/fireefire_p7nrdw.jpg",
     "total_posts": 124
   },
   {
     "id": 2,
     "name": "PUBG Mobile",
     "slug": "pubg-mobile",
-    "logo": "/logos/pubg.png",
+    "logo": "https://res.cloudinary.com/dce35sgmb/image/upload/v1772056836/pubg_c0hw8z.jpg",
     "total_posts": 85
   },
   {
     "id": 3,
     "name": "eFootball Mobile",
     "slug": "efootball-mobile",
-    "logo": "/logos/efootball.png",
+    "logo": "https://res.cloudinary.com/dce35sgmb/image/upload/v1772056836/efootball_dzilg4.jpg",
     "total_posts": 156
   },
   {
     "id": 4,
     "name": "Clash of Clans",
     "slug": "clash-of-clans",
-    "logo": "/logos/coc.png",
+    "logo": "https://res.cloudinary.com/dce35sgmb/image/upload/v1772056836/coc_gma4gu.jpg",
     "total_posts": 42
   },
   {
     "id": 5,
-    "name": "FIFA Mobile / FC",
+    "name": "FIFA Mobile",
     "slug": "fifa-mobile",
-    "logo": "/logos/fifa.png",
+    "logo": "https://res.cloudinary.com/dce35sgmb/image/upload/v1772056836/fifa_uubqfv.jpg",
     "total_posts": 67
   },
   {
     "id": 6,
     "name": "Clash Royale",
     "slug": "clash-royale",
-    "logo": "/logos/clash-royale.png",
+    "logo": "https://res.cloudinary.com/dce35sgmb/image/upload/v1772056836/clashroyal_fxnsrf.jpg",
     "total_posts": 29
   }
 ]
